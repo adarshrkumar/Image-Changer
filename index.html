@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
@@ -7,18 +7,15 @@
     <link href="style.css" rel="stylesheet">
   </head>
   <body>
-    <center>
-      <img src="start.png" onclick="changeImage()">
-      <br>
-      <button class="openImage" onclick="window.open('start.png')">
-        <b>Open Up Image</b>
-      </button>
-      <br>
-      <button onclick="changeImage()">
-        <b>Random Image</b>
-      </button>
-    </center>
-    <script src="script.js"></script>
-<!--    <script src="checker.js"></script>-->
+    <img alt="" src="">
+    <script>
+      var image = document.querySelector('img')
+
+      changeImage();
+      image.addEventListener('click', changeImage)
+      function changeImage() {
+        image.setAttribute('src', `https://picsum.photos/${image.clientWidth}/${image.clientHeight}`);
+      }
+    </script>
   </body>
 </html>
